@@ -42,19 +42,19 @@ jobs:
           docker image ls
 
       - name: running Docker
-        timeout-minutes: 340
+        timeout-minutes: 60
         continue-on-error: true
         run: |
           docker run --privileged --rm -i mirror-bot
 
-      - name: Loop Workflow
-        continue-on-error: true
-        run: |
+     # - name: Loop Workflow
+       # continue-on-error: true
+       # run: |
           # ${GITHUB_REPOSITORY} is the repo slug which runs this script
-          git clone https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} loop
-          cd loop || exit 1
-          echo $(( RANDOM - ( RANDOM % RANDOM ) )) > looper.txt
-          git add looper.txt
-          git commit -m "Workflow : Loop"
-          git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:main
+         # git clone https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} loop
+        #  cd loop || exit 1
+         # echo $(( RANDOM - ( RANDOM % RANDOM ) )) > looper.txt
+         # git add looper.txt
+         # git commit -m "Workflow : Loop"
+         # git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:main
 

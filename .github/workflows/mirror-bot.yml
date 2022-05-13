@@ -8,8 +8,8 @@ on:
    
 env:
   # Change these values if you have forked it for your own works
-  GitHubMail: "hiteshkamble920@gmail.com"
-  GitHubName: "hitesh920" 
+  GitHubMail: "gitbond@outlook.com"
+  GitHubName: "henloop" 
   Branch: "master"
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
           echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
 
       # Cleanup The Actions Workspace Using Custom Composite Run Actions
-      - uses: rokibhasansagar/slimhub_actions@main
+    #  - uses: rokibhasansagar/slimhub_actions@main
 
       - name: Clone The Secret Mirror Repository
         run: |
